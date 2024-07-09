@@ -48,6 +48,7 @@ Customization: You can customize the active class name and style through propert
 								{/* we get variable name isActive when we pass classes in NavLink such that we can check on which page we are right now by matching with URL. */}
 
 								<NavLink
+									// As in Link we need to tell after clicking the link where we should go, same will happen in NavLink by using to which is very important in routing
 									to="/"
 									className={({ isActive }) =>
 										`block py-2 pr-4 pl-3 duration-200 border-b ${

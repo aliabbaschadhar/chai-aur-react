@@ -14,6 +14,11 @@ import Contact from "./Components/Contact";
 import Github, { githubInfoLoader } from "./Components/Github";
 import User from "./Components/User";
 
+// CreateBrowserRoute is used to define and manage the routing structure of your application. It helps you set up the routes and navigate between different components based on the URL.
+
+//! Two Methods : -->
+
+//! (1)-->
 // const router = createBrowserRouter([
 // 	{
 // 		path: "/",
@@ -35,16 +40,17 @@ import User from "./Components/User";
 // 	},
 // ]);
 
+// ! (2)-->
+
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path="/" element={<Root />}>
 			<Route path="" element={<Home />}></Route>
 			<Route path="about" element={<About />}></Route>
 			<Route path="contact" element={<Contact />}></Route>
-			<Route path="user:userid" element={<User />}></Route>
-
+			<Route path="user/:userid" element={<User />}></Route>{" "}
+			{/* whatever we use after /: in path=user is very important  */}
 			{/* Before loader api data is fetched when we clicked on button and page is loaded means we have to wait a few millisecods for that. */}
-
 			{/* But using loader when our cursor reaches at button api is called and response kept in cache memory and we don't need wait for response and when it page is loaded response is already rendered in page. */}
 			<Route
 				loader={githubInfoLoader}

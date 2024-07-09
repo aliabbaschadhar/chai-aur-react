@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-
+//useParams giveus to access to whatever into the URL , it all depends on us what we want to do with it.
 function User() {
 	const { userid } = useParams();
 	return (
