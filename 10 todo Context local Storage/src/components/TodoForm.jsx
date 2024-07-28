@@ -13,7 +13,7 @@ function TodoForm() {
 		//We don't need id here bcz we are setting in App.jsx while adding todo but if we set then it will not cause any error.
 
 		// addTodo({todo:todo,completed:false})
-		//in new syntax we can write this (todo instead of todo:todo)
+		//in new syntax we can write this  if both name of field and variable is same then (todo instead of todo:todo)
 
 		addTodo({ todo, completed: false });
 		setTodo(""); //bcz when todo added then there will be prev remained in setTodo() so that's why make it empty
