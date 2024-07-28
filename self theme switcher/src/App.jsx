@@ -3,6 +3,7 @@ import { ThemeProvider } from "./Context/theme";
 import ThemeBtn from "./components/Thmebtn";
 import Card from "./components/Card";
 
+//Installed Ubuntu
 function App() {
 	const [themeMode, setThemeMode] = useState("light");
 	const lightTheme = () => {
