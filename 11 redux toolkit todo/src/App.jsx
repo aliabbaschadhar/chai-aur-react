@@ -6,6 +6,8 @@
 //If we just update the value or change the state then past vlaues of arrays will be overwritten.
 //But in Redux Toolkit we can update the state without first spreading the past array , it handles all of these things like spreading past array under the hood.
 
+import { AddTodo, Todos } from "./components";
+
 //? Reducers --> They are used to make changes in store / mini stores means functionality in stores will be handled by reducers
 
 //We used two method in redux
@@ -14,9 +16,11 @@
 
 function App() {
 	return (
-		<div>
+		<>
 			<h1 className="text-3xl">Learning React Redux ToolKit</h1>
-		</div>
+			<AddTodo />
+			<Todos />
+		</>
 	);
 }
 

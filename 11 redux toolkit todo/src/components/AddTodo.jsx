@@ -3,14 +3,17 @@ import { useDispatch } from "react-redux";
 import { addTodo } from "../features/todo/todoSlice";
 
 function AddTodo() {
+	//AddTodo means we have to add something in store means we have to send something means dispatch something/functionality to Store.js
+
 	const [input, setInput] = useState("");
 	const dispatch = useDispatch();
 
-	//useDispatch() makes changes in store using a reducer dispatch means send karna
+	//useDispatch() makes changes in store using a reducer dispatch means send karna means functionality send karna
 
 	const addTodoHandler = (e) => {
 		e.preventDefault();
-		dispatch(addTodo(input)); //We are making changes in object store using addTodo reducer
+		dispatch(addTodo(input)); //We are making changes with the help of addTodo reducer in object store.
+		//dispatch aik reducer to use karke store mai changes karta hai.
 		//We are dispatching an action
 		setInput("");
 	};
