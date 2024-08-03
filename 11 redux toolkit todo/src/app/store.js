@@ -28,4 +28,5 @@ Remember this all works because it was a default export.
 
 export const store = configureStore({
 	reducer: todoReducer,
-}); //created a store and exported it
+});
+//created a store and exported it

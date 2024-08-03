@@ -7,7 +7,7 @@
 //But in Redux Toolkit we can update the state without first spreading the past array , it handles all of these things like spreading past array under the hood.
 
 import { AddTodo, Todos } from "./components";
-
+import "./App.css";
 //? Reducers --> They are used to make changes in store / mini stores means functionality in stores will be handled by reducers
 
 //We used two method in redux

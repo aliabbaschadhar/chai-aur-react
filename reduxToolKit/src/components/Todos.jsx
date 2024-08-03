@@ -1,15 +1,16 @@
-import { useSelector } from "react-redux"; //Because we getting value from initialState
-import { useDispatch } from "react-redux"; //Because we need to deleted todo and for delte we need to send some actions means dispatch some actions for that we will use useDispatch()
-
-//To make changes in Store we need reducer so for that we will import reducer
+import { useSelector, useDispatch } from "react-redux";
 import { removeTodo } from "../features/todo/todoSlice";
 
 function Todos() {
 	const todos = useSelector((state) => state.todos);
 	const dispatch = useDispatch();
+	const onClickHandler = () => {
+		cd;
+	};
+
 	return (
 		<>
-			<h1>Todos</h1>
+			<div>Todos</div>
 			<ul className="list-none">
 				{todos.map((todo) => (
 					<li
@@ -36,11 +37,11 @@ function Todos() {
 								/>
 							</svg>
 						</button>
+						<button onClick={onClickHandler}>📝</button>
 					</li>
 				))}
 			</ul>
 		</>
 	);
 }
-
 export default Todos;

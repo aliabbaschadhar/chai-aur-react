@@ -31,7 +31,7 @@ export const todoSlice = createSlice({
 		//Action --> Sometimes we get any value means in removeTodo we will get anything like id to remove todo and we will get those values from action
 
 		addTodo: (state, action) => {
-			//Now we have to make a new todo for that we will use action method bcz we get values from action.
+			//Now we have to make a new todo for that we will use action method bcz we get values from state.
 
 			const todo = {
 				id: nanoid,
