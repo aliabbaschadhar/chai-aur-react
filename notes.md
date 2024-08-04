@@ -56,3 +56,9 @@ bun install @reduxjs/toolkit
 bun install react-redux
 bun run dev
 ```
+
+## For All with react-router, reduxToolkit , tinymce html-react-parser reactHookForm
+
+```bash
+ bun install @reduxjs/toolkit react-redux react-router-dom appwrite @tinymce/tinymce-react html-react-parser react-hook-form
+```
