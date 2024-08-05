@@ -20,14 +20,12 @@ export class AuthService {
 				password,
 				name
 			);
-			if (userAccount) {
-				//call another method
-				this.login(email, password);
-			} else {
-				userAccount;
-			}
+			if (!userAccount) throw new Error("Failed to create account");
+			this.login(email, password);
+			return true; //indicate sucess
 		} catch (error) {
 			console.log("Appwrite service :: createAccount :: error : ", error);
+			return false; // indicated Failure
 		}
 	}
 	//Login
@@ -39,6 +37,7 @@ export class AuthService {
 			);
 		} catch (error) {
 			console.log("Appwrite service :: login :: error : ", error);
+			return false;
 		}
 	}
 	//Get current user
@@ -51,8 +50,8 @@ export class AuthService {
 				"Appwrite service :: getCurrentUser :: error : ",
 				error
 			);
+			return null;
 		}
-		return null;
 	}
 
 	//Logout
@@ -65,8 +64,8 @@ export class AuthService {
 	}
 }
 
-const authservice = new AuthService();
+const authService = new AuthService();
 
-export default authservice;
+export default authService;
 
 // export default AuthService;

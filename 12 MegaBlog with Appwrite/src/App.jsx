@@ -1,4 +1,10 @@
+import { useCallback, useState } from "react";
 import "./App.css";
+import { useDispatch } from "react-redux";
+import authService from "./appwrite/auth";
+import { login, logout } from "./features/authSlice";
+import { Header, Footer } from "./components/index";
+import { Outlet } from "react-router-dom";
 
 //! What are environment variables
 //Environment variables are key-value pairs used to store configuration settings outside of the application code.
@@ -12,13 +18,47 @@ function App() {
 
 	// console.log(import.meta.env.VITE_APPWRITE_URL); //to access a vite app
 
-	return (
-		<>
-			<h1 className="text-3xl text-orange-500 bg-black">
-				A Blog with Appwrite
-			</h1>
-		</>
-	);
+	const [loading, setLoading] = useState(true); // because we are using useEffect()
+
+	//When user is loggedIn then we will show him data otherwise loading.
+	//Whenever we sending some request to database or network and waiting for response we will use loading state for conditional rendering
+
+	const dispatch = useDispatch();
+
+	useCallback(() => {
+		authService
+			.getCurrentUser() //returns a promise
+			.then((userData) => {
+				if (userData) {
+					dispatch(login({ userData }));
+				} else {
+					dispatch(logout());
+				}
+			})
+			.catch((error) => console.log("Error received : ", error))
+			.finally(() => setLoading(false));
+	}, [dispatch, setLoading]);
+
+	/* 1-->  We have to check that either user is logedIn or logedOut whenever app is loaded if user is loggedIN then we will show him some components otherwise we will him AuthForm  */
+
+	if (loading) {
+		return (
+			<div className="min-h-screen flex-wrap content-between bg-gray-400">
+				<div className="w-full block">
+					<Header />
+					<main>TODO: {/* <Outlet/> */}</main>
+					<Footer />
+				</div>
+			</div>
+		);
+	} else {
+		return (
+			<div>
+				<h1>No data </h1>
+				{console.log("No data ...")}
+			</div>
+		);
+	}
 }
 
 export default App;

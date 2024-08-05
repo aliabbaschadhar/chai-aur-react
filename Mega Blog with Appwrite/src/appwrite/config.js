@@ -17,7 +17,7 @@ export class Service {
 	async createPost({ title, slug, content, featuredImage, status, userId }) {
 		try {
 			return await this.databases.createDocument(
-				conf.datebaseId,
+				conf.databaseId,
 				conf.colletionId,
 				slug,
 				{
@@ -36,8 +36,8 @@ export class Service {
 	async updatePost(slug, { title, content, featuredImage, status }) {
 		try {
 			return await this.databases.updateDocument(
-				conf.datebaseId,
-				conf.colletionId,
+				conf.databaseId,
+				conf.collectionId,
 				slug,
 				{
 					title,
@@ -54,8 +54,8 @@ export class Service {
 	async deletePost(slug) {
 		try {
 			await this.databases.deleteDocument(
-				conf.datebaseId,
-				conf.colletionId,
+				conf.databaseId,
+				conf.collectionId,
 				slug
 			);
 			return true;
@@ -70,8 +70,8 @@ export class Service {
 	async getPost(slug) {
 		try {
 			return await this.databases.getDocument(
-				conf.datebaseId,
-				conf.colletionId,
+				conf.databaseId,
+				conf.collectionId,
 				slug
 			);
 		} catch (error) {
@@ -84,8 +84,8 @@ export class Service {
 	async getPosts(slug, queries = [Query.equal("status", "active")]) {
 		try {
 			return await this.databases.listDocuments(
-				conf.datebaseId,
-				conf.colletionId,
+				conf.databaseId,
+				conf.collectionId,
 				slug,
 				queries
 			);
@@ -119,7 +119,7 @@ export class Service {
 	}
 	//File preview
 	async filePreview(fileId) {
-		return await this.bucket.getFilePreview(conf.bucketId, fileId);
+		return this.bucket.getFilePreview(conf.bucketId, fileId);
 	}
 }
 
