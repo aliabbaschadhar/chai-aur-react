@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import { forwardRef, useId } from "react";
 
+// const Input = forwardRef((props,ref){})
+
 const Input = forwardRef(function Input(
 	{ label, type = "text", className = "", ...props },
 	ref
@@ -15,6 +17,7 @@ const Input = forwardRef(function Input(
 			)}
 			<input
 				type={type}
+				k
 				className={` px-3 py-4 rouded-lg bg-white text-black outline-none focus:bg-gray-50 duration-200 border border-gray-200 w-full ${className}`}
 				ref={ref} //It will provide refrence to the input to access state
 				{...props}

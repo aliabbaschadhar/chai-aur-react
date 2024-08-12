@@ -3,8 +3,9 @@ import "./App.css";
 import { useDispatch } from "react-redux";
 import authService from "./appwrite/auth";
 import { login, logout } from "./features/authSlice";
-import { Header, Footer } from "./components/index";
-import { Outlet } from "react-router-dom";
+import { Header, Footer } from "./components/index.js";
+
+// import { Outlet } from "react-router-dom";
 
 //! What are environment variables
 //Environment variables are key-value pairs used to store configuration settings outside of the application code.
