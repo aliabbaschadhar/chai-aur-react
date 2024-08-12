@@ -2,6 +2,7 @@
 import { forwardRef, useId } from "react";
 
 // const Input = forwardRef((props,ref){})
+//Used to pass porops from parent component to child component
 
 const Input = forwardRef(function Input(
 	{ label, type = "text", className = "", ...props },

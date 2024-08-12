@@ -4,5 +4,24 @@ import LogoutBtn from "./Header/LogoutBtn";
 import Logo from "./Logo";
 import Container from "./container/Container";
 import Button from "./Button";
+import PostCard from "./PostCard";
+import Select from "./Select";
+import Input from "./Input";
+import Login from "./Login";
+import Signup from "./Signup";
+import Protected from "./AuthLayout";
 
-export { Header, Button, Footer, LogoutBtn, Logo, Container };
+export {
+	Header,
+	Button,
+	Footer,
+	LogoutBtn,
+	Logo,
+	Container,
+	PostCard,
+	Login,
+	Signup,
+	Protected,
+	Select,
+	Input,
+};
